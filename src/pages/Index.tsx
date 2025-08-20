@@ -69,7 +69,7 @@ const Index = () => {
         <div className="max-w-2xl mx-auto text-center space-y-8">
           <div className="space-y-4">
             <h1 className="text-5xl font-bold bg-gradient-pokemon bg-clip-text text-transparent" dir="rtl">
-              הרפתקאת מתמטיקה עם פוקימון
+              לימוד לוח הכפל עם פוקימון וארי אוחנה
             </h1>
             <p className="text-xl text-foreground" dir="rtl">
               למדו כפל תוך כדי לכידת כל 151 הפוקימונים!
@@ -156,7 +156,7 @@ const Index = () => {
       <div className="max-w-4xl mx-auto space-y-6">
         <div className="text-center">
           <h1 className="text-3xl font-bold bg-gradient-pokemon bg-clip-text text-transparent mb-2" dir="rtl">
-            הרפתקאת מתמטיקה עם פוקימון
+            לימוד לוח הכפל עם פוקימון וארי אוחנה
           </h1>
           <HebrewSpeech num1={currentQuestion.num1} num2={currentQuestion.num2} />
         </div>
