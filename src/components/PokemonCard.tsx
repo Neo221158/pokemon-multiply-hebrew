@@ -7,23 +7,36 @@ interface PokemonCardProps {
   name: string;
   isUnlocked: boolean;
   onClick?: () => void;
+  showImage?: boolean;
+  imageUrl?: string;
 }
 
-export const PokemonCard = ({ id, name, isUnlocked, onClick }: PokemonCardProps) => {
+export const PokemonCard = ({ id, name, isUnlocked, onClick, showImage = false, imageUrl }: PokemonCardProps) => {
   return (
     <GameCard className="text-center transition-all duration-300 hover:shadow-pokemon">
       <div className="space-y-3">
         <div className="text-2xl font-bold text-primary">#{String(id).padStart(3, '0')}</div>
-        <div 
-          className={cn(
-            "w-16 h-16 mx-auto rounded-full border-4 flex items-center justify-center text-2xl",
-            isUnlocked 
-              ? "bg-gradient-pokemon border-pokemon-yellow animate-pulse-pokemon" 
-              : "bg-muted border-border"
-          )}
-        >
-          {isUnlocked ? "🔓" : "🔒"}
-        </div>
+        
+        {showImage && isUnlocked && imageUrl ? (
+          <div className="w-24 h-24 mx-auto">
+            <img 
+              src={imageUrl} 
+              alt={name}
+              className="w-full h-full object-contain animate-bounce-gentle"
+            />
+          </div>
+        ) : (
+          <div 
+            className={cn(
+              "w-16 h-16 mx-auto rounded-full border-4 flex items-center justify-center text-2xl",
+              isUnlocked 
+                ? "bg-gradient-pokemon border-pokemon-yellow animate-pulse-pokemon" 
+                : "bg-muted border-border"
+            )}
+          >
+            {isUnlocked ? "🔓" : "🔒"}
+          </div>
+        )}
         <div className="font-medium text-foreground">
           {isUnlocked ? name : "???"}
         </div>
@@ -34,7 +47,7 @@ export const PokemonCard = ({ id, name, isUnlocked, onClick }: PokemonCardProps)
             onClick={onClick}
             disabled={!isUnlocked}
           >
-            {isUnlocked ? "View" : "Locked"}
+            {isUnlocked ? "צפה" : "נעול"}
           </Button>
         )}
       </div>

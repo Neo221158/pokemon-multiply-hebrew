@@ -14,20 +14,20 @@ export const GameProgress = ({ currentLevel, totalLevels, pokemonCaught }: GameP
     <GameCard className="mb-6">
       <div className="space-y-4">
         <div className="flex justify-between items-center">
-          <h3 className="text-lg font-semibold text-foreground">Progress</h3>
-          <div className="text-sm text-muted-foreground">
-            Level {currentLevel} of {totalLevels}
+          <h3 className="text-lg font-semibold text-foreground" dir="rtl">התקדמות</h3>
+          <div className="text-sm text-muted-foreground" dir="rtl">
+            שלב {currentLevel} מתוך {totalLevels}
           </div>
         </div>
         
         <Progress value={progressPercentage} className="h-3" />
         
-        <div className="flex justify-between text-sm">
+        <div className="flex justify-between text-sm" dir="rtl">
           <span className="text-pokemon-blue font-medium">
-            🎮 Current Level: {currentLevel}
+            🎮 שלב נוכחי: {currentLevel}
           </span>
           <span className="text-pokemon-red font-medium">
-            ⚡ Pokémon Caught: {pokemonCaught}
+            ⚡ פוקימונים שנתפסו: {pokemonCaught}
           </span>
         </div>
       </div>

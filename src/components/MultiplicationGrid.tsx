@@ -27,16 +27,17 @@ export const MultiplicationGrid = ({ level, question, onAnswer }: Multiplication
       const row = [];
       for (let j = 0; j < 10; j++) {
         const cellValue = (i + 1) * (j + 1);
-        const isHighlighted = 
-          (i + 1 === question.num1 && j + 1 === question.num2) ||
-          (i + 1 === question.num2 && j + 1 === question.num1);
+        // Only highlight the factors, not the answer
+        const isFactorHighlighted = 
+          (i + 1 === question.num1 && j === 0) || // Highlight first factor column
+          (i === 0 && j + 1 === question.num2);   // Highlight second factor row
         
         row.push(
           <div
             key={`${i}-${j}`}
             className={cn(
               "w-8 h-8 flex items-center justify-center text-xs font-medium border rounded",
-              isHighlighted 
+              isFactorHighlighted 
                 ? "bg-pokemon-yellow text-foreground border-pokemon-red animate-pulse-pokemon" 
                 : "bg-white/80 text-foreground border-border"
             )}
@@ -63,8 +64,8 @@ export const MultiplicationGrid = ({ level, question, onAnswer }: Multiplication
         <div className="text-4xl font-bold text-pokemon-red mb-4">
           {question.num1} × {question.num2} = ?
         </div>
-        <div className="text-lg text-muted-foreground mb-4">
-          Find the answer in the grid below!
+        <div className="text-lg text-muted-foreground mb-4" dir="rtl">
+          מצאו את התשובה בטבלה למטה!
         </div>
       </div>
 
@@ -77,11 +78,12 @@ export const MultiplicationGrid = ({ level, question, onAnswer }: Multiplication
       <div className="flex gap-4 items-center justify-center">
         <Input
           type="number"
-          placeholder="Your answer"
+          placeholder="התשובה שלכם"
           value={userAnswer}
           onChange={(e) => setUserAnswer(e.target.value)}
           className="w-32 text-center text-lg font-bold"
           disabled={isAnswered}
+          dir="ltr"
         />
         <Button
           variant="pokemon"
@@ -89,7 +91,7 @@ export const MultiplicationGrid = ({ level, question, onAnswer }: Multiplication
           disabled={!userAnswer || isAnswered}
           size="lg"
         >
-          Submit
+          שלח תשובה
         </Button>
       </div>
     </GameCard>

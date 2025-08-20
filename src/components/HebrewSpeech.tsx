@@ -47,7 +47,7 @@ export const HebrewSpeech = ({ num1, num2 }: HebrewSpeechProps) => {
         className="flex items-center gap-2"
       >
         <Volume2 className="w-4 h-4" />
-        {isPlaying ? "Playing..." : "Listen"}
+        {isPlaying ? "מנגן..." : "האזן"}
       </Button>
     </div>
   );
