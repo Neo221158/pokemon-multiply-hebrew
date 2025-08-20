@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { GameCard } from "./GameCard";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface MultiplicationGridProps {
   level: number;
@@ -13,6 +13,12 @@ interface MultiplicationGridProps {
 export const MultiplicationGrid = ({ level, question, onAnswer }: MultiplicationGridProps) => {
   const [userAnswer, setUserAnswer] = useState("");
   const [isAnswered, setIsAnswered] = useState(false);
+
+  // Reset state when question changes (allows retry after wrong answer)
+  useEffect(() => {
+    setUserAnswer("");
+    setIsAnswered(false);
+  }, [question]);
 
   const handleSubmit = () => {
     const answer = parseInt(userAnswer);
