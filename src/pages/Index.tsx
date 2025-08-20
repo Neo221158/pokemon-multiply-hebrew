@@ -174,9 +174,9 @@ const Index = () => {
         />
 
         <div className="text-center">
-          <h3 className="text-lg font-semibold mb-4" dir="rtl">פוקימונים שנתפסו לאחרונה</h3>
+          <h3 className="text-lg font-semibold mb-4" dir="rtl">הפוקימונים שתפסתי</h3>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            {Array.from(caughtPokemon).slice(-5).map((pokemonId) => (
+            {Array.from(caughtPokemon).map((pokemonId) => (
               <PokemonCard
                 key={pokemonId}
                 id={pokemonId}
