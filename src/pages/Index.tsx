@@ -48,8 +48,8 @@ const Index = () => {
       }, 3000);
     } else {
       toast({
-        title: "לא בדיוק נכון 😔",
-        description: "נסה שוב! אתה יכול לעשות את זה!",
+        title: "התשובה לא נכונה 😔",
+        description: "זה בסדר! קח עוד הזדמנות ונסה שוב!",
         variant: "destructive",
       });
       
