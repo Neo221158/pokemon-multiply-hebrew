@@ -8,12 +8,7 @@ interface PokemonCollectionProps {
 
 export const PokemonCollection = ({ caughtPokemon, className }: PokemonCollectionProps) => {
   const getPokemonImage = (id: number) => {
-    // For now, return a placeholder - in a full implementation, 
-    // you'd have individual images for each Pokemon
-    if (id === 1) return "/src/assets/pokemon-001-bulbasaur.png";
-    if (id === 6) return "/src/assets/pokemon-006.png";
-    if (id === 25) return "/src/assets/pokemon-001.png";
-    return null;
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
   };
 
   return (

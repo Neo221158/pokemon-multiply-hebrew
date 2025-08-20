@@ -21,10 +21,7 @@ const Index = () => {
   const { toast } = useToast();
 
   const getPokemonImage = (id: number) => {
-    if (id === 1) return bulbasaur;
-    if (id === 6) return charizard;
-    if (id === 25) return pikachu;
-    return null;
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
   };
 
   const handleAnswer = (correct: boolean) => {
