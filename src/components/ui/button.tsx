@@ -18,6 +18,10 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        pokemon: "bg-gradient-pokemon text-white font-bold shadow-pokemon hover:scale-105 transform transition-all duration-200",
+        answer: "bg-white/90 border-2 border-pokemon-blue text-foreground hover:bg-pokemon-blue hover:text-white shadow-card",
+        success: "bg-success text-success-foreground hover:bg-success/90 shadow-success animate-celebrate",
+        level: "bg-gradient-card border border-border text-foreground hover:shadow-pokemon hover:scale-102 transform transition-all duration-300",
       },
       size: {
         default: "h-10 px-4 py-2",
