@@ -171,6 +171,7 @@ const Index = () => {
           level={currentLevel}
           question={currentQuestion}
           onAnswer={handleAnswer}
+          caughtPokemon={caughtPokemon}
         />
 
         <div className="text-center">
